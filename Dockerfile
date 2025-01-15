@@ -18,9 +18,9 @@ RUN apt-get update && apt-get upgrade -y \
     && update-locale LANG=en_US.UTF-8 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py39_24.11.1-0-Linux-x86_64.sh  \
-    && bash Miniconda3-py39_24.11.1-0-Linux-x86_64.sh  -b -p /opt/conda \
-    && rm -f Miniconda3-py39_24.11.1-0-Linux-x86_64.sh  
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py311_24.11.1-0-Linux-x86_64.sh  \
+    && bash Miniconda3-py311_24.11.1-0-Linux-x86_64.sh  -b -p /opt/conda \
+    && rm -f Miniconda3-py311_24.11.1-0-Linux-x86_64.sh  
 
 # Update conda and clean
 RUN conda update --all \
