@@ -4,7 +4,7 @@ FROM ubuntu:24.04
 LABEL maintainer="Yucheng Zhang <Yucheng.Zhang@tufts.edu>"
 
 # Help message
-LABEL description="This container contains miniconda-py39 installed on ubuntu:24.04."
+LABEL description="This container contains miniconda-py38 installed on ubuntu:24.04."
 
 # Set environment variables
 ENV PATH=/opt/conda/bin:$PATH \
@@ -18,9 +18,9 @@ RUN apt-get update && apt-get upgrade -y \
     && update-locale LANG=en_US.UTF-8 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py311_24.11.1-0-Linux-x86_64.sh  \
-    && bash Miniconda3-py311_24.11.1-0-Linux-x86_64.sh  -b -p /opt/conda \
-    && rm -f Miniconda3-py311_24.11.1-0-Linux-x86_64.sh  
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py38_23.11.0-2-Linux-x86_64.sh  \
+    && bash Miniconda3-py38_23.11.0-2-Linux-x86_64.sh  -b -p /opt/conda \
+    && rm -f Miniconda3-py38_23.11.0-2-Linux-x86_64.sh  
 
 # Update conda and clean
 RUN conda update --all \
